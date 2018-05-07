@@ -2,13 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 np.random.seed(123)
-e = np.random.standard_t(df = 10, size = 100)
+e = np.random.standard_t(df = 10, size = 100000)
 theta = 0.6
 
 def T(n):
     t = [1]
     tmp = 1
-    for i in range(100):
+    for i in range(n):
         tmp = theta * tmp + e[i]
         t.append(tmp)
     return t
@@ -27,7 +27,7 @@ x = list(map(lambda x:x / 10, range(-50,50)))
 #折れ線グラフ、ヒストグラム、正規分布のグラフ
 for i in range(4):
     plt.subplot(221 + i)
-    plt.hist(t[i])
+    plt.hist(t[i],normed=True,bins=100)
     y = [sd(z) for z in x]
     plt.plot(x,y)
 plt.show()
