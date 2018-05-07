@@ -13,7 +13,7 @@ def eigenvalue(n):
                 X[j][i] = tmp
     X = X / (n ** 0.5)
     eig = np.linalg.eig(X)
-    return list(eig[0].real)
+    return list(eig[0])
 
 def f(x):
     return (4 - x ** 2) ** 0.5 * 0.5 / np.pi
