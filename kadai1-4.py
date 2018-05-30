@@ -17,9 +17,13 @@ def eigenvalue(n):
 
 def f(x):
     return (4 - x ** 2) ** 0.5 * 0.5 / np.pi
+'''
+plt.hist(eigenvalue(100), normed=True, bins=10)
+plt.show()
 
+'''
 l = []
-for _ in range(1000):
+for _ in range(10000):
     l = l + eigenvalue(100)
 plt.hist(l, normed=True, bins=100)
 
